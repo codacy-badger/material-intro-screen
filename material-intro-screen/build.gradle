@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply from: 'maven-push.gradle'
 
 android {
     compileSdkVersion 26
@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -18,7 +18,6 @@ android {
         debug {
             defaultPublishConfig "debug"
         }
-
     }
 
     lintOptions {
@@ -35,12 +34,4 @@ android {
         implementation "com.android.support:percent:26.1.0"
     }
 
-    publish {
-        userOrg = 'tangoagency'
-        groupId = 'agency.tango.android'
-        artifactId = 'material-intro-screen'
-        publishVersion = '0.0.5'
-        desc = ''
-        website = 'https://github.com/TangoAgency/material-intro-screen'
-    }
 }
