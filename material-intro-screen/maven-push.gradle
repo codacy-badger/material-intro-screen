@@ -2,7 +2,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 def isReleaseBuild() {
-    return !VERSION_NAME.contains("SNAPSHOT")
+    return VERSION_NAME.contains("SNAPSHOT") == false
 }
 
 def getReleaseRepositoryUrl() {
@@ -42,7 +42,6 @@ afterEvaluate { project ->
 
                 pom.project {
                     name POM_NAME
-                    packaging POM_PACKAGING
                     description POM_DESCRIPTION
                     url POM_URL
 
@@ -70,6 +69,16 @@ afterEvaluate { project ->
             }
         }
     }
+
+    /*task androidJavadocs(type: Javadoc) {
+        source = android.sourceSets.main.allJava
+    }
+
+    task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+        classifier = 'javadoc'
+        from androidJavadocs.destinationDir
+    }
+    */
 
     signing {
         required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
