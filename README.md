@@ -113,7 +113,7 @@ getBackButtonTranslationWrapper()
 
 #### And set there the [app:mis_layout_parallaxFactor][ParallaxFactor] attribute:
 ```xml
-<agency.tango.materialintroscreen.parallax.ParallaxLinearLayout
+<de.thekolo.materialintroscreen.parallax.ParallaxLinearLayout
 xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
