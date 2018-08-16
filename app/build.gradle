@@ -1,12 +1,10 @@
 apply plugin: 'com.android.application'
 
-apply from: "$rootDir/versions.gradle"
-
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "agency.tango.materialintro"
+        applicationId "de.thekolo.materialintro"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -26,7 +24,7 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation "com.android.support:appcompat-v7:25.4.0"
+    implementation "com.android.support:appcompat-v7:26.1.0"
     implementation project(path: ':material-intro-screen')
     testImplementation 'junit:junit:4.12'
 }
